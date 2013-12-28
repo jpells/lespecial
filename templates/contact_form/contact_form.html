@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block htmltitle %}Contact Us{% endblock %}
+{% block content %}
+<div id="contactus">
+<h2>Contact Us</h2>
+<form action="" method="post">
+<ul>
+{% csrf_token %}
+{{ form.as_ul }}
+<li><input name="submit" type="submit" class="button" id="ok" value="ok" />
+</li>
+</ul>
+</form>
+</div><!-- end contactus -->
+{% endblock %}

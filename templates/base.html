@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>lespecial {% block htmltitle %}{% endblock %}</title>
+<link rel="shortcut icon" type="image/ico" href="{{ MEDIA_URL }}imgs/transparent.ico" />
+
+<link href="{{ MEDIA_URL }}css/base.css" rel="stylesheet" type="text/css" />
+<!--[if lt IE 7]>
+<script src="js/IE8.js" type="text/javascript"></script>
+<![endif]-->
+</head>
+
+<body>
+<div id="container">
+<div id="headerWrapper">
+<h1><a href="/" title="lespecial"><span>lespecial</span></a></h1>
+<div id="preParagraph">
+<!--<h2>lespecial say &quot;hello!&quot;</h2>-->
+<p>lespecial is special</p>
+<p>and so are YOU!</p>
+
+</div><!-- end preParagraph -->
+<!--<p class="betatest"><img src="images/beta.gif" alt="we are now in beta test version 2.06" width="95" height="95" title="we are now in beta test version 2.06" /></p>-->
+<ul id="navigation">
+{% load menubuilder %}
+{% menu main %}
+{% for item in menuitems %}
+<li><a href="{{ item.url }}" title="{{ item.title|escape }}"{% if item.current %} class='active'{% endif %}>{{ item.title }}</a></li>
+{% endfor %}
+</ul><!-- end navagation -->
+</div><!-- end headerWrapper -->
+{% block content %}
+<div id="indexWrapper">
+<ul class="latestplan">
+
+<li>
+<h2>UPCOMING SHOWS</h2>
+<ol>
+<li>
+<p class="planImage"><img src="images/demo_web.gif" alt="" width="320" height="140" /></p>
+<p><em>December 30th, 2011</em>Show 1</p>
+</li><!-- end plan1 -->
+<li class="end">
+<p class="planImage"><img src="images/demo_web.gif" alt="" width="320" height="140" /></p>
+<p><em>December 31st, 2011</em>Show 2</p>
+</li><!-- end plan2 -->
+</ol>
+
+<p class="recentWork"><a href="">see our past shows »</a></p>
+</li>
+</ul><!-- end latestplan -->
+<ul class="blogandShop">
+<li>
+<h2>MERCH</h2>
+<ol>
+<!--<li>+ <a href="http://thaicss.com/สร้าง-Findability-Website-ด้วย-Web-Standards/">สร้าง Findability Website ด้วย Web Standards</a></li>
+<li>+ <a href="http://www.thaicss.com/Naked-Day-ปี-2008/">CSS Naked Day 2008 in Thai</a></li>
+<li>+ <a href="http://www.thaicss.com/IE8-และ-การพัฒนาของบุคคลากร-Web-ไทย/">IE8 กับการพัฒนาบุคคลากรเวปไทย</a></li>
+
+<li>+ <a href="http://www.thaicss.com/XHTML-CSS-เพื่อประโยชน์ทาง-SEO-อย่างแท้จริง/">XHTML CSS เพื่อประโยชน์ทาง SEO อย่างแท้จริง</a></li>
+<li>+ <a href="http://www.thaicss.com/web-standard-บนเวทีการเมือง/">web standard บนเวทีการเมือง</a></li>
+<li>+ <a href="http://www.thaicss.com/รู้จักกับ-Microformats/">รู้จักับ Microformats</a></li>-->
+</ol>
+</li>
+<li class="end">
+<h2>&nbsp;</h2>
+<ul>
+<li>
+<p class="shopImage"><img src="images/demo_product.gif" alt="" width="155" height="80" /></p>
+
+<!--<p>New Products: N74125</p>
+<p>detail detail detail detail detail detail</p>
+<p class="more"><a href="#">more details »</a></p>-->
+</li>
+</ul>
+</li>
+</ul>
+</div><!-- end indexWrapper -->
+{% endblock %}
+<div id="footer">
+<p class="copyright">&copy; copyright 2011 Jimmy Pells</p>
+</div><!-- end footer -->
+
+</div><!-- end container -->
+</body>
+</html>
